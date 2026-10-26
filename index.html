@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roblox Lab | Guía para crear una página web</title>
+<style>
+:root{--bg:#0b0d12;--panel:#151923;--panel2:#1d2330;--text:#f3f5f8;--muted:#b4bdcc;--red:#ff4057;--cyan:#63e6e2;--line:#303848;--yellow:#ffd166}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,#252039 0,transparent 28%),var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:var(--cyan)}a:hover{color:white}.wrap{width:min(1100px,92%);margin:auto}.topbar{position:sticky;top:0;z-index:5;background:#0b0d12eF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0}.brand{font-weight:900;letter-spacing:.08em}.brand span{color:var(--red)}nav{display:flex;gap:15px;flex-wrap:wrap}nav a{text-decoration:none;font-size:.9rem;color:var(--muted)}.hero{padding:76px 0 55px;display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:center}.eyebrow{color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem}.hero h1{font-size:clamp(2.6rem,7vw,5.2rem);line-height:.98;margin:14px 0 22px;letter-spacing:-.055em}.hero h1 em{font-style:normal;color:var(--red)}.lead{color:var(--muted);font-size:1.13rem;max-width:680px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-block;padding:11px 17px;border-radius:10px;background:var(--red);color:white;text-decoration:none;font-weight:800}.btn.secondary{background:transparent;border:1px solid var(--line)}.cube-scene{min-height:280px;display:grid;place-items:center;position:relative}.cube{width:150px;height:150px;background:linear-gradient(145deg,#fff,#b9c0cb);transform:rotate(-8deg);border-radius:20px;box-shadow:20px 24px 0 #ff40572e,0 25px 60px #0008;display:grid;place-items:center;color:#10131a;font-size:5rem;font-weight:900}.orbit{position:absolute;border:1px solid #63e6e255;border-radius:50%;width:260px;height:260px;transform:rotate(25deg)}.orbit:after{content:"";position:absolute;width:17px;height:17px;background:var(--cyan);border-radius:50%;top:24px;left:34px}.section{padding:48px 0;border-top:1px solid var(--line)}.section h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1;margin:8px 0 18px}.section-intro{color:var(--muted);max-width:800px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.card{background:linear-gradient(145deg,var(--panel),#11151d);border:1px solid var(--line);border-radius:16px;padding:22px}.card h3{margin:7px 0 8px}.card p{color:var(--muted);margin:0}.number{width:36px;height:36px;border-radius:10px;background:#ff40571c;color:var(--red);display:grid;place-items:center;font-weight:900}.tag{display:inline-block;border:1px solid #63e6e255;color:var(--cyan);padding:3px 9px;border-radius:99px;font-size:.78rem;font-weight:700}.split{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.step{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}.step:last-child{border:0}.step .number{width:40px;height:40px}.step h3{margin:0 0 5px}.step p{margin:0;color:var(--muted)}.mock{background:#f4f6fa;color:#20242c;border-radius:14px;overflow:hidden;border:1px solid #d3d8e2;box-shadow:0 12px 30px #0003}.mockbar{padding:10px 14px;background:#e6eaf1;font-size:.8rem;color:#545d6b}.mockbody{padding:22px}.mockhero{padding:22px;border-radius:10px;background:linear-gradient(120deg,#252a35,#5b2434);color:white}.mockhero h3{font-size:1.6rem;margin:0}.mockchips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.mockchips span{background:#ffffff1c;border:1px solid #ffffff2b;padding:5px 9px;border-radius:7px;font-size:.78rem}.mockcards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:13px}.mockcards div{background:white;border:1px solid #d9dee8;border-radius:8px;padding:12px;font-size:.8rem}.note{padding:15px 17px;border-left:3px solid var(--yellow);background:#ffd16610;border-radius:0 10px 10px 0;color:var(--muted);margin:20px 0}.checklist{list-style:none;padding:0}.checklist li{padding:9px 0;border-bottom:1px solid var(--line);color:var(--muted)}.checklist li:before{content:"□";color:var(--cyan);font-weight:900;margin-right:10px}.footer{padding:30px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}.small-disclosure{font-size:10px;opacity:.72;margin-top:14px}.sources li{margin:9px 0;color:var(--muted)}.pill{color:var(--yellow);font-size:.8rem;font-weight:800}.callout{background:var(--panel2);padding:22px;border:1px solid var(--line);border-radius:15px}.callout strong{color:white}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:50px}.cube-scene{min-height:220px;order:-1}.cube{width:115px;height:115px;font-size:4rem}.orbit{width:210px;height:210px}.grid{grid-template-columns:1fr}.split{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}nav{gap:10px}.mockcards{grid-template-columns:1fr}}
+@media print{.topbar,.actions{display:none}.hero{padding:30px 0}.section{break-inside:avoid}}
+
+.cover{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px 5%;background:radial-gradient(circle at 85% 15%,#35233b 0,transparent 32%),linear-gradient(145deg,#0b0d12,#151923);border-bottom:1px solid var(--line)}
+.cover-inner{width:min(850px,100%);min-height:620px;border:1px solid #394253;border-radius:22px;padding:clamp(28px,6vw,64px);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;background:#11151dcc}
+.cover-inner:before{content:"R";position:absolute;right:-20px;top:35px;font-size:clamp(15rem,35vw,25rem);line-height:1;font-weight:950;color:#ff40570d;pointer-events:none}
+.cover-top,.cover-main,.cover-meta{position:relative;z-index:1}
+.cover-brand{font-weight:900;letter-spacing:.12em;font-size:1rem}.cover-brand span{color:var(--red)}
+.cover-kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-size:.8rem;font-weight:800;margin-top:55px}
+.cover h1{font-size:clamp(2.8rem,8vw,5.5rem);line-height:.98;letter-spacing:-.05em;margin:14px 0}.cover h1 em{font-style:normal;color:var(--red)}
+.cover-subtitle{font-size:1.15rem;color:var(--muted);max-width:560px}
+.cover-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin-top:50px;border-top:1px solid var(--line);padding-top:22px}
+.cover-meta p{margin:0;color:var(--muted);font-size:.95rem}.cover-meta strong{color:var(--text);display:block}
+@media(max-width:600px){.cover-inner{min-height:650px}.cover-meta{grid-template-columns:1fr}.cover-kicker{margin-top:35px}}
+@media print{.cover{page-break-after:always;min-height:100vh}.topbar{position:static}}
+
+</style>
+</head>
+<body>
+
+<section class="cover" aria-label="Portada del trabajo">
+ <div class="cover-inner">
+  <div class="cover-top"><div class="cover-brand">ROBLOX<span> LAB</span></div><div class="cover-kicker">Área de Tecnología e Informática</div></div>
+  <div class="cover-main">
+   <h1>Creación de una página <em>web</em></h1>
+   <p class="cover-subtitle">Investigación y tutorial paso a paso utilizando como temática la plataforma Roblox.</p>
+  </div>
+  <div class="cover-meta">
+   <p><strong>Estudiante</strong>Miguel Ángel Morales Lema</p>
+   <p><strong>Grado</strong>9B</p>
+   <p><strong>Docente</strong>Jigliola Castro Londoño</p>
+   <p><strong>Institución</strong>I.E. Rafael J. Mejía</p>
+   <p><strong>Ciudad</strong>Sabaneta, Antioquia</p>
+   <p><strong>Fecha</strong>26 de octubre de 2026</p>
+  </div>
+ </div>
+</section>
+
+<header class="topbar"><div class="wrap nav"><div class="brand">ROBLOX<span> LAB</span></div><nav aria-label="Navegación principal"><a href="#roblox">Roblox</a><a href="#herramienta">Herramienta</a><a href="#tutorial">Tutorial</a><a href="#miweb">Mi diseño</a><a href="#evidencias">Evidencias</a><a href="#fuentes">Fuentes</a></nav></div></header>
+<main>
+<section class="wrap hero">
+ <div><div class="eyebrow">Proyecto de Tecnología · Diseño web</div><h1>De cero a tu primera <em>web.</em></h1><p class="lead">Una guía práctica para aprender a planear, diseñar y publicar una página sobre Roblox. Incluye una propuesta visual propia y un tutorial pensado para alguien que empieza desde cero.</p><div class="actions"><a class="btn" href="#tutorial">Empezar el tutorial</a><a class="btn secondary" href="#miweb">Ver el diseño</a></div><p class="small-disclosure">Se utilizó una herramienta de inteligencia artificial como apoyo para organizar ideas y redactar parte del contenido.</p></div>
+ <div class="cube-scene" aria-label="Ilustración decorativa de un bloque tridimensional"><div class="orbit"></div><div class="cube">R</div></div>
+</section>
+<section class="section" id="roblox"><div class="wrap"><div class="eyebrow">01 · Tema elegido</div><h2>¿Qué es Roblox?</h2><p class="section-intro">Roblox es una plataforma en línea donde las personas pueden explorar experiencias 3D y crear sus propios juegos, objetos y espacios virtuales. No es un solo juego: reúne experiencias muy distintas, creadas por una comunidad de desarrolladores.</p>
+<div class="grid">
+ <article class="card"><span class="tag">Explorar</span><h3>Experiencias</h3><p>Hay obbies de obstáculos, carreras, simuladores, aventuras y mundos para construir. Cada experiencia tiene reglas y objetivos diferentes.</p></article>
+ <article class="card"><span class="tag">Personalizar</span><h3>Avatares</h3><p>Los usuarios pueden modificar la apariencia de su avatar con ropa, accesorios y animaciones disponibles en la plataforma.</p></article>
+ <article class="card"><span class="tag">Crear</span><h3>Roblox Studio</h3><p>Es la herramienta para construir, probar y publicar experiencias propias. Crear una página informativa es diferente de programar un juego.</p></article>
+</div><div class="note"><strong>Uso responsable:</strong> no compartas contraseñas, dirección, teléfono ni otros datos privados. Desconfía de páginas que prometen Robux gratis; utiliza los canales oficiales y las herramientas de reporte.</div></div></section>
+<section class="section" id="herramienta"><div class="wrap"><div class="eyebrow">02 · Investigación</div><h2>Herramienta seleccionada: Google Sites</h2><p class="section-intro"><strong>Google Sites</strong> permite crear sitios mediante bloques de contenido, sin tener que escribir código. Es útil para principiantes porque puedes agregar texto, imágenes, páginas y videos desde el navegador.</p>
+<div class="split"><div class="card"><h3>¿Por qué elegirla?</h3><ul><li>Se puede empezar sin pagar.</li><li>La edición es visual y sencilla.</li><li>Permite organizar el sitio en varias páginas.</li><li>Se puede publicar y compartir un enlace.</li></ul><p><a class="btn" href="https://sites.google.com/" target="_blank" rel="noopener">Abrir Google Sites ↗</a></p><p><a href="https://support.google.com/sites/answer/6372878?hl=es" target="_blank" rel="noopener">Tutorial oficial de Google ↗</a></p></div><div class="card"><h3>Objetivo de la estrategia</h3><p>Enseñar a la docente a crear un sitio sencillo mientras se diseña una página informativa sobre Roblox. La estrategia consiste en demostrar una acción, repetirla en el proyecto y comprobar el resultado antes de avanzar.</p><p><strong>Materiales:</strong> computador, conexión a internet, cuenta de Google, textos preparados e imágenes que se puedan usar legalmente.</p></div></div>
+<div class="note">Google Sites puede no estar disponible para algunas cuentas administradas por padres o instituciones. Si no permite crear un sitio, solicita orientación a la docente o utiliza una cuenta autorizada por la institución.</div></div></section>
+<section class="section" id="tutorial"><div class="wrap"><div class="eyebrow">03 · Enseñanza paso a paso</div><h2>Cómo enseñaría a crear la página</h2><p class="section-intro">La docente no necesita experiencia previa. Primero le mostraría el procedimiento y después le pediría que lo repita en su propio sitio.</p>
+<div class="split"><div>
+<div class="step"><div class="number">1</div><div><h3>Planear el contenido</h3><p>Definir el público, el propósito y las secciones. Para este ejemplo: inicio, qué es Roblox, experiencias, consejos de seguridad y fuentes.</p></div></div>
+<div class="step"><div class="number">2</div><div><h3>Abrir Google Sites</h3><p>Entrar a <a href="https://sites.google.com/" target="_blank" rel="noopener">sites.google.com</a> con una cuenta autorizada y elegir un sitio en blanco o una plantilla.</p></div></div>
+<div class="step"><div class="number">3</div><div><h3>Elegir nombre y tema visual</h3><p>Escribir el nombre “Roblox Lab”. Seleccionar colores y tipografía legibles; usar un color fuerte para títulos y un fondo oscuro para dar identidad.</p></div></div>
+<div class="step"><div class="number">4</div><div><h3>Crear las páginas</h3><p>En la pestaña “Páginas”, agregar secciones como Inicio, Guía de Roblox y Seguridad. Ordenarlas para que el menú sea fácil de entender.</p></div></div>
+<div class="step"><div class="number">5</div><div><h3>Insertar contenido</h3><p>En “Insertar”, añadir cuadros de texto, imágenes, botones, divisores o videos. Escribir párrafos cortos y usar subtítulos para separar las ideas.</p></div></div>
+<div class="step"><div class="number">6</div><div><h3>Revisar el diseño</h3><p>Usar la vista previa para revisar cómo se ve en computador y celular. Comprobar que los textos se lean y que los enlaces funcionen.</p></div></div>
+<div class="step"><div class="number">7</div><div><h3>Publicar y compartir</h3><p>Presionar “Publicar”, escoger una dirección disponible y revisar quién puede ver el sitio. Copiar el enlace final y probarlo en otra ventana.</p></div></div>
+</div><div>
+<div class="mock" aria-label="Ejemplo ilustrativo del diseño propuesto"><div class="mockbar">Vista ilustrativa del sitio · No es una captura real de Google Sites</div><div class="mockbody"><div class="mockhero"><div class="pill">GUÍA PARA JUGADORES</div><h3>Explora. Crea. Aprende.</h3><p>Un vistazo a los mundos de Roblox.</p><div class="mockchips"><span>Experiencias</span><span>Avatares</span><span>Seguridad</span></div></div><div class="mockcards"><div><strong>01</strong><br>Conoce Roblox</div><div><strong>02</strong><br>Descubre experiencias</div><div><strong>03</strong><br>Juega con cuidado</div></div></div></div>
+<div class="callout" style="margin-top:18px"><strong>Consejo para enseñar:</strong><p>Después de cada paso, pide a la docente que lo repita. No avances hasta comprobar que pudo hacerlo. Si algo falla, revisen juntos el menú y la vista previa.</p></div>
+<div class="card" style="margin-top:18px"><h3>¿Y si se hace con HTML?</h3><p>HTML organiza el contenido; CSS controla colores y diseño; JavaScript permite interacciones. Este archivo es una muestra de esas tecnologías. Google Sites, en cambio, permite construir un sitio visualmente sin programar toda la página.</p></div>
+</div></div></div></section>
+<section class="section" id="miweb"><div class="wrap"><div class="eyebrow">04 · Diseño de mi página</div><h2>Propuesta: Roblox Lab</h2><p class="section-intro">Una página informativa para personas que quieren conocer Roblox, descubrir tipos de experiencias y aprender recomendaciones básicas de seguridad digital.</p>
+<div class="grid">
+ <article class="card"><h3>Propósito</h3><p>Explicar Roblox de manera breve, organizada y fácil de navegar.</p></article>
+ <article class="card"><h3>Estructura</h3><p>Inicio, información general, tipos de experiencias, seguridad y fuentes consultadas.</p></article>
+ <article class="card"><h3>Estilo visual</h3><p>Fondo oscuro, títulos blancos, acentos rojos y turquesa, tarjetas y botones claros.</p></article>
+</div>
+<h3>Contenido que incorporaría</h3><ul><li>Una introducción corta a la plataforma.</li><li>Ejemplos de experiencias: obstáculos, simulación, carreras y construcción.</li><li>Una explicación de Roblox Studio y la diferencia entre jugar y crear.</li><li>Consejos para proteger la cuenta y reconocer enlaces sospechosos.</li><li>Enlaces a fuentes oficiales para ampliar la información.</li></ul>
+
+</div></section>
+
+<section class="section" id="sustentacion"><div class="wrap"><div class="eyebrow">06 · Preparación oral</div><h2>Guion breve para sustentar</h2><div class="callout"><p>“Elegí Google Sites porque permite crear una página sin conocimientos avanzados de programación. Mi tema es Roblox porque es una plataforma de experiencias y creación digital. Organicé el contenido en secciones para facilitar la navegación. Para construir una página, primero planeo el contenido, luego elijo una plantilla, agrego páginas, inserto texto e imágenes, reviso la vista previa y finalmente publico el sitio. También incluí recomendaciones de seguridad y fuentes oficiales.”</p></div>
+<h3>Preguntas que podrían hacerme</h3><ul><li><strong>¿Qué es HTML?</strong> Es el lenguaje de marcado que organiza la estructura de una página web.</li><li><strong>¿Para qué sirve CSS?</strong> Para definir colores, tamaños, espacios y presentación visual.</li><li><strong>¿Qué significa publicar?</strong> Hacer que el sitio esté disponible mediante un enlace, según los permisos elegidos.</li><li><strong>¿Qué diferencia hay entre Roblox y Roblox Studio?</strong> Roblox permite explorar experiencias; Roblox Studio es la herramienta para crear y probar experiencias.</li><li><strong>¿Cómo compruebo que funciona?</strong> Reviso enlaces, navegación, lectura en móvil y acceso al enlace publicado.</li></ul>
+</div></section>
+<section class="section" id="conclusiones"><div class="wrap"><div class="eyebrow">07 · Conclusiones</div><h2>Lo que aprendí</h2><p>Crear una página web requiere planear el contenido, organizar la información y mantener un diseño coherente. Una herramienta visual como Google Sites facilita el proceso, mientras que HTML y CSS permiten controlar la estructura y el aspecto con más detalle. Una dificultad posible es organizar muchas ideas sin saturar la pantalla; se puede solucionar usando secciones, párrafos cortos y una navegación clara. Antes de entregar, es necesario comprobar los enlaces, revisar la ortografía, añadir evidencias reales y confirmar que el sitio publicado sea visible para la docente.</p><p><strong>Reflexión:</strong> una página útil no solo debe verse bien; también debe comunicar información confiable, ser fácil de recorrer y respetar la seguridad de sus visitantes.</p></div></section>
+<section class="section" id="fuentes"><div class="wrap"><div class="eyebrow">08 · Fuentes consultadas</div><h2>Referencias</h2><ul class="sources">
+<li>Google. <em>Cómo usar Google Sites.</em> <a href="https://support.google.com/sites/answer/6372878?hl=es" target="_blank" rel="noopener">https://support.google.com/sites/answer/6372878?hl=es</a></li>
+<li>Roblox Creator Hub. <em>What is Roblox?</em> <a href="https://create.roblox.com/docs/what-is-roblox" target="_blank" rel="noopener">https://create.roblox.com/docs/what-is-roblox</a></li>
+<li>Roblox. <em>Safety FAQs.</em> <a href="https://about.roblox.com/safety-faqs" target="_blank" rel="noopener">https://about.roblox.com/safety-faqs</a></li>
+<li>Roblox. <em>Community Standards.</em> <a href="https://about.roblox.com/community-standards" target="_blank" rel="noopener">https://about.roblox.com/community-standards</a></li>
+</ul></div></section>
+</main>
+<footer class="footer"><div class="wrap">ROBLOX LAB · Proyecto educativo de diseño web · <span id="year">2026</span><p>Nombre: Miguel Ángel Morales Lema · Grado: 9B · Área: Tecnología e Informática · Institución: I.E. Rafael J. Mejía</p></div></footer>
+</body></html>
